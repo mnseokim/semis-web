@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Semis Clipper",
+  "version": "1.0",
+  "description": "현재 페이지를 Semis에 저장합니다",
+  "permissions": ["activeTab"],
+  "host_permissions": [
+    "https://xeegdoyfxgbaqvuzvcib.supabase.co/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  }
+}
