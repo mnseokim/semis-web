@@ -1,46 +1,38 @@
-# Getting Started with Create React App
+# Semis
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+반도체·디스플레이 기술 블로그 큐레이션 서비스
 
-## Available Scripts
+## 기능
 
-In the project directory, you can run:
+- **자동 크롤링** — 삼성반도체 뉴스룸, SK하이닉스 뉴스룸, 삼성 기술 블로그 RSS/Sitemap 기반 매일 자동 수집
+- **3단계 필터** — 분야 / 세부기술 / 소스유형 / 기업별 필터링
+- **읽음 처리** — 읽은 글은 하단으로, 안읽은 글 수 표시
+- **문구 북마크** — 기사에서 저장하고 싶은 문구를 링크와 함께 보관
+- **Semis Clipper** — 브라우저 확장으로 외부 기사 바로 저장
+- **URL 직접 추가** — 원하는 기사 URL 입력 시 메타태그 자동 파싱
 
-### `npm start`
+## 스택
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- React + TypeScript
+- Supabase (DB + Edge Functions + pg_cron)
+- styled-components
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 로컬 실행
 
-### `npm test`
+```bash
+npm install
+npm start
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+`.env.local` 파일에 아래 값 설정 필요:
 
-### `npm run build`
+```
+REACT_APP_SUPABASE_URL=...
+REACT_APP_SUPABASE_ANON_KEY=...
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 브라우저 확장 설치
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. `chrome://extensions/` 접속
+2. 개발자 모드 활성화
+3. 압축 해제된 확장 로드 → `extension/` 폴더 선택
